@@ -1,7 +1,3 @@
-/******************
- * YOUR CODE HERE *
- ******************/
-
 function xify(str){
   let string = '';
   for (i = 0; i < str.length; i++){
@@ -10,6 +6,8 @@ function xify(str){
   return string;
 }
 
+console.log(xify("Strings are fun!"))
+
 function yellingChars(str){
   let shout = '';
   for (const value of str) {
@@ -17,6 +15,8 @@ function yellingChars(str){
   }
   return shout;
 }
+
+console.log(yellingChars("Wait"))
 
 function indexedChars(str){
   let indexStr = '';
@@ -28,6 +28,8 @@ function indexedChars(str){
   return indexStr;
 }
 
+console.log(indexedChars("Awesome"))
+
 function numberedChars(str){
   let counting = '';
   let count = 1;
@@ -37,6 +39,8 @@ function numberedChars(str){
   }
   return counting;
 }
+
+console.log(numberedChars("Numbers"))
 
 function exclaim(str) {
   let change = "";
@@ -48,6 +52,8 @@ function exclaim(str) {
   return change;
 }
 
+console.log(exclaim("Whatsup?"))
+
 function repeatIt(str, num) {
   let repeatStr = "";
   let countNum = 0;
@@ -58,7 +64,9 @@ function repeatIt(str, num) {
   return repeatStr;
 }
 
-function truncate(str) {
+console.log(repeatIt("Repeat ",3))
+
+function turncate(str) {
   let shortStr = "";
   if (str.length <= 18) {
     return str;
@@ -68,6 +76,8 @@ function truncate(str) {
     }
   return shortStr + "...";
 }
+
+console.log(turncate("this is my love letter to myself"))
 
 function ciEmailify(str) {
   let email = "";
@@ -84,6 +94,8 @@ function ciEmailify(str) {
   return email + website;
 }
 
+console.log(ciEmailify("willie.williams"))
+
 function reverse(str) {
   let backward = "";
   for (let i = str.length - 1; i >= 0; i--) {
@@ -91,6 +103,9 @@ function reverse(str) {
   }
   return backward;
 }
+
+console.log(reverse("nevaeh"))
+
 
 function onlyVowels(str){
   let newStr = '';
@@ -114,6 +129,8 @@ function onlyVowels(str){
   return newStr;
   }
 
+  console.log(onlyVowels("Give me a vowel"))
+
   function crazyCase(str){
     let newStr = '';
     for (let i = 0;i < str.length; i++){
@@ -127,6 +144,8 @@ function onlyVowels(str){
     }
     return newStr;
   }
+
+  console.log(crazyCase("I know when the hotline ring"))
 
   function titleCase(str){
     let newStr = '';
@@ -150,6 +169,8 @@ function onlyVowels(str){
     return newStr;
     }
 
+    console.log(titleCase("I am...batman!!"))
+
     function camelCase(str){
       let newStr = '';
       let rep = false;
@@ -167,6 +188,8 @@ function onlyVowels(str){
     }
       return newStr;
     }
+
+    console.log(camelCase("All you had to do was follow the train C.J"))
 
     function crazyCase2ReturnOfCrazyCase(str){
       let newStr = '';
@@ -199,86 +222,4 @@ function onlyVowels(str){
       return newStr;
 }
 
- /********************************************
- * CODE DOWN HERE IS FOR INTERNAL USE ONLY. *
- *           PLEASE DON'T TOUCH!            *
- ********************************************/
-
-if (typeof xify === 'undefined') {
-  xify = undefined;
-}
-
-if (typeof smilify === 'undefined') {
-  smilify = undefined;
-}
-
-if (typeof yellingChars === 'undefined') {
-  yellingChars = undefined;
-}
-
-if (typeof numberedChars === 'undefined') {
-  numberedChars = undefined;
-}
-
-if (typeof indexedChars === 'undefined') {
-  indexedChars = undefined;
-}
-
-if (typeof exclaim === 'undefined') {
-  exclaim = undefined;
-}
-
-if (typeof repeatIt === 'undefined') {
-  repeatIt = undefined;
-}
-
-if (typeof truncate === 'undefined') {
-  truncate = undefined;
-}
-
-if (typeof ciEmailify === 'undefined') {
-  ciEmailify = undefined;
-}
-
-if (typeof reverse === 'undefined') {
-  reverse = undefined;
-}
-
-if (typeof onlyVowels === 'undefined') {
-  onlyVowels = undefined;
-}
-
-if (typeof crazyCase === 'undefined') {
-  crazyCase = undefined;
-}
-
-if (typeof titleCase === 'undefined') {
-  titleCase = undefined;
-}
-
-if (typeof camelCase === 'undefined') {
-  camelCase = undefined;
-}
-
-if (typeof crazyCase2ReturnOfCrazyCase === 'undefined') {
-  crazyCase2ReturnOfCrazyCase = undefined;
-}
-
-
-module.exports = {
-  xify,
-  smilify,
-  indexedChars,
-  yellingChars, // <-- add this line here (no need for the comment, obvs)
-  numberedChars,
-  exclaim,
-  repeatIt,
-  truncate,
-  ciEmailify,
-  reverse,
-  onlyVowels,
-  crazyCase,
-  titleCase,
-  camelCase,
-  crazyCase2ReturnOfCrazyCase,
-}
+console.log(crazyCase2ReturnOfCrazyCase("I’ll have two number 9s, a number 9 large, a number 6 with extra dip, a number 7, two number 45s, one with cheese, and a large soda."))
