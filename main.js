@@ -1,114 +1,115 @@
+const prompt = require('prompt-sync')({ sigint : true });
+
 function xify(str){
-  let string = '';
+  let output = '';
   for (i = 0; i < str.length; i++){
     string = string + 'x';
   }
   return string;
 }
-
-console.log(xify("Strings are fun!"))
+console.log(xify('hello'));
+console.log(xify('hi there'));
 
 function yellingChars(str){
-  let shout = '';
-  for (const value of str) {
-    shout = shout + value + '!';
-  }
-  return shout;
+  let output = '';
+  for (let i = 0; i , str.length; i++) {
+    output = output + str[i] + "!";
+}
+return output;
 }
 
-console.log(yellingChars("Wait"))
+console.log(yellingChars("goodness"));
+console.log(yellingChars('oh hello'));
+
 
 function indexedChars(str){
-  let indexStr = '';
-  let indexedValue = 0;
-  for (const value of str) {
-    indexStr = indexStr + indexedValue + value;
-    indexedValue++;
+  let output = '';
+  for (let i = 0; i < str.length; i++) {
+    output = output + [i] + str[i];
   } 
-  return indexStr;
+  return output;
 }
 
-console.log(indexedChars("Awesome"))
+console.log(indexedChars("Awesome"));
 
 function numberedChars(str){
-  let counting = '';
-  let count = 1;
-  for (const value of str) {
-    counting = counting + '(' + count + ')' + value;
-    count++;
+  let output = '';
+  for (let i = 0; i < str.length; i++) {
+    output = output + '(' + (i+1) + ')' + str[i]
   }
-  return counting;
+  return output;
 }
 
-console.log(numberedChars("Numbers"))
+console.log(numberedChars('hello'));
+console.log(numberedChars('bye'));
 
 function exclaim(str) {
-  let change = "";
-  for (const value of str) {
-    if (value === "." || value === "?") {
-      change = change + "!";
-    } else change = change + value;
+  let output = '';
+  for (let i = 0; i < str.length; i++) {
+    if (str[i] === "." || str[i] === "?") {
+      output = output + "!";
+    } else output += str[i];
   }
-  return change;
+  return output;
 }
 
-console.log(exclaim("Whatsup?"))
+console.log(exclaim("Whatsup? How are you doing? I'm fine."));
 
 function repeatIt(str, num) {
-  let repeatStr = "";
-  let countNum = 0;
-  while (countNum < num) {
-    repeatStr = repeatStr + str;
-    countNum++;
+  let output = '';
+  for (let i = 0; i < num; i++) {
+    output = output + str;
   }
-  return repeatStr;
+  return output;
 }
 
-console.log(repeatIt("Repeat ",3))
+console.log(repeatIt("bettlejuice", 3));
+console.log(repeatIt('oh hi!', 8));
 
-function turncate(str) {
-  let shortStr = "";
-  if (str.length <= 18) {
-    return str;
-  } else
+function truncate(str) {
+  if (str.length > 15) {
+    let output = '';
     for (let i = 0; i < 15; i++) {
-      shortStr = shortStr + str[i];
+      output = output + str[i];
+  } 
+    output = output + '...';
+    return output;
+    } else {
+  return str;
     }
-  return shortStr + "...";
 }
 
-console.log(turncate("this is my love letter to myself"))
+console.log(truncate('The fault, dear Brutus, is not in our stars, but in ourselves.'));
+console.log(truncate("Well, that's just, like, your opinion man."));
 
 function ciEmailify(str) {
-  let email = "";
-  let website = "@codeimmersives.com";
-  let period = ".";
-  for (let value of str) {
-    if (value !== " ") {
-      email = email + value.toLowerCase();
-    }
-    if (value === " ") {
-      email = email + period;
-    }
+  let output = '';
+  for (let i = 0; i < str.length; i++) {
+      if (str[i] === ' ') {
+          output = output + '.';
+      } else {
+          output = output + str[i];
+      }
   }
-  return email + website;
+  output = output + '@codeimmersives.com'
+  return output;
 }
 
-console.log(ciEmailify("willie.williams"))
+console.log(ciEmailify('Willie Williams'));
 
 function reverse(str) {
-  let backward = "";
+  let output = "";
   for (let i = str.length - 1; i >= 0; i--) {
-    backward = backward + str[i];
+    output = output + str[i];
   }
-  return backward;
+  return output;
 }
 
-console.log(reverse("nevaeh"))
+console.log(reverse('nevaeh'));
 
 
 function onlyVowels(str){
-  let newStr = '';
+  let output = '';
   for (const letter of str){
     let vowel = (
       letter ==='e' || 
@@ -123,13 +124,15 @@ function onlyVowels(str){
       letter ==='A'
     );
     if (vowel){
-      newStr = newStr + letter;
+      output = output + letter;
     }
   }
-  return newStr;
+  return output;
   }
 
-  console.log(onlyVowels("Give me a vowel"))
+  console.log(onlyVowels('Knuckles'));
+  console.log(onlyVowels('Sonic'));
+  console.log(onlyVowels('Tails'));
 
   function crazyCase(str){
     let newStr = '';
@@ -207,7 +210,7 @@ function onlyVowels(str){
             space++
           }
          } else if (space % 2 === 1){
-           if ((i - 1)%2 === 0){
+           if ((i - 1) % 2 === 0){
           let letter2 = str[i].toLowerCase()
             newStr = newStr + letter2
           } else {
